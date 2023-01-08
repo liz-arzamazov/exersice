@@ -58,5 +58,5 @@ app.get("/patient/:id", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log(`Hello server is running! 🕹️ `);
+  console.log(`Hello server is running! 🆙 `);
 });

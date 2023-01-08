@@ -39,7 +39,7 @@ npm install
 Run the script the setup a new Database:
 
 ```
-node create-db.js
+npm run prep
 ```
 
 Start up the backend:
