@@ -1,0 +1,63 @@
+<div class="search">
+  <input
+    name="search"
+    type="text"
+    placeholder="Search by First Name"
+    [(ngModel)]="searchValue1"
+  />
+  <input
+    name="search"
+    type="text"
+    placeholder="Search by Last Name"
+    [(ngModel)]="searchValue2"
+  />
+  <input
+    name="search"
+    type="text"
+    placeholder="Search by ID"
+    [(ngModel)]="searchValue3"
+  />
+
+  <label> Sort by: &nbsp;</label>
+  <select [(ngModel)]="sortByParam">
+    <option value="GA">GA</option>
+    <option value="AGE">AGE</option>
+  </select>
+
+  <button type="button" (click)="onSortDirection()">Sort</button>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>ID#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>LMP</th>
+        <th>DOB</th>
+        <th>AGE</th>
+        <th>GA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let patient of patients
+            | search : searchValue1 : 'First'
+            | search : searchValue2 : 'Last'
+            | search : searchValue3 : 'ID'
+            | sort : [sortByParam, sortDirection]
+        "
+      >
+        <td>{{ patient.ID }}</td>
+        <td>{{ patient.First | titlecase }}</td>
+        <td>{{ patient.Last | titlecase }}</td>
+        <td>{{ patient.LMP }}</td>
+        <td>{{ patient.DOB }}</td>
+        <td>{{ patient.AGE }}</td>
+        <td>{{ patient.GA }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
