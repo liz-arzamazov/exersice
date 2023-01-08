@@ -5,7 +5,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "prep": "echo \"Preparing Server ⚒️\" && node create-db.js ",
+    "prep": "echo \"Preparing Server ⚒️\" && node create-db.js && exit 0",
     "dev": "echo \"Running Server\"  && nodemon app.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

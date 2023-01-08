@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 const db = mysql2.createConnection({
   host: "127.0.0.1",
   user: "root",
-  password: "123",
+  password: "your_db_password",
   database: "test",
   port: 3306,
 });
@@ -27,7 +27,7 @@ db.connect((error) => {
 
 // get all patients data
 app.get("/patients", (req, res) => {
-  const query = `SELECT * FROM patients.patients_list;`;
+  const query = `SELECT * FROM test.patients;`;
   db.query(query, (error, data) => {
     if (error) {
       throw error;
@@ -41,7 +41,7 @@ app.get("/patients", (req, res) => {
 app.get("/patient/:id", (req, res) => {
   const getID = req.params.id;
 
-  const query = `SELECT * FROM patients.patients_list WHERE ID=${getID};`;
+  const query = `SELECT * FROM test.patients WHERE ID=${getID};`;
 
   db.query(query, (error, data) => {
     if (error) {

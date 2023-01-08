@@ -4,7 +4,7 @@ import data from "./data.json" assert { type: "json" };
 const db = mysql2.createConnection({
   host: "127.0.0.1",
   user: "root",
-  password: "123",
+  password: "your_db_password",
   port: 3306,
 });
 
