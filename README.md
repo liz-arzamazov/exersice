@@ -2,6 +2,8 @@
 
 ### Run the frontend:
 
+#
+
 CD into the frontend directory:
 
 ```
@@ -14,6 +16,12 @@ Install dependencies:
 npm install
 ```
 
+If Angular isn't installed, run this to install it globally:
+
+```
+npm install -g @angular/cli
+```
+
 Start up the frontend:
 
 ```
@@ -22,7 +30,11 @@ ng serve
 
 The application will be started on: http://localhost:4200/
 
+#
+
 ### Run the backend:
+
+#
 
 In a septate terminal, CD into the backend directory:
 
