@@ -1,6 +1,6 @@
 # Exercise
 
-This exercise was created using Angular, if it isn't installed, run this to install it globally:
+This exercise was created using Angular, if it isn't installed run this to install it globally:
 
 ```
 npm install -g @angular/cli
