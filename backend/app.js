@@ -9,17 +9,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const db = mysql2.createConnection({
-  host: "localhost",
+  host: "127.0.0.1",
   user: "root",
-  password: "hello01XC",
-  database: "patients",
+  password: "123",
+  database: "test",
   port: 3306,
 });
 
-// mysql connection and error handler
+// mysql connection
 db.connect((error) => {
-  if (error) console.log(error);
-  console.log("Database is connected successfully! 📄");
+  if (error) {
+    throw error;
+  } else {
+    console.log("Database is connected successfully! 📄");
+  }
 });
 
 // get all patients data
@@ -27,7 +30,7 @@ app.get("/patients", (req, res) => {
   const query = `SELECT * FROM patients.patients_list;`;
   db.query(query, (error, data) => {
     if (error) {
-      console.log(error);
+      throw error;
     }
     if (data.length > 0) {
       res.send(data);
@@ -42,7 +45,7 @@ app.get("/patient/:id", (req, res) => {
 
   db.query(query, (error, data) => {
     if (error) {
-      console.log(error);
+      throw error;
     }
     if (data.length > 0) {
       res.send(data);

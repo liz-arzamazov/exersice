@@ -5,8 +5,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "echo \"Test dev\"",
-    "start": "echo \"Running Server\"  && nodemon app.js",
+    "prep": "echo \"Preparing Server ⚒️\" && node create-db.js ",
+    "dev": "echo \"Running Server\"  && nodemon app.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Liz Arzamazov",
